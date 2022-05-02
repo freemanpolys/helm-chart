@@ -1,0 +1,41 @@
+apiVersion: v1
+entries:
+  cno-agent:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-05-02T17:40:29.36258Z"
+    dependencies:
+    - alias: metrics-server
+      condition: cnoAgent.metricServer
+      name: metrics-server
+      repository: https://kubernetes-sigs.github.io/metrics-server
+      version: 3.8.2
+    description: A Helm chart for Kubernetes
+    digest: c933a5c004007a53378f1d407d2fc152eb6879306404d1a442733479e3b2ddfa
+    name: cno-agent
+    type: application
+    urls:
+    - https://freemanpolys.github.io/helm-chart/cno-agent-1.0.0.tgz
+    version: 1.0.0
+  cno-chart:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-05-02T17:40:29.37532Z"
+    dependencies:
+    - alias: strimziKafkaOperator
+      name: strimzi-kafka-operator
+      repository: https://strimzi.io/charts
+      version: 0.27.1
+    - alias: agentConfig
+      condition: agentConfig.defaultCluster
+      name: cno-agent
+      repository: file://../data-plane
+      version: 1.0.0
+    description: A Helm chart for Kubernetes
+    digest: ed3d57a0d824f70de584354cf93beafb87a456ec10f6ceb4e78392a77f2ca51c
+    name: cno-chart
+    type: application
+    urls:
+    - https://freemanpolys.github.io/helm-chart/cno-chart-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-05-02T17:40:29.355303Z"
